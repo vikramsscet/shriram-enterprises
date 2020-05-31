@@ -144,6 +144,9 @@ nav.fixed-top {
   width: 35px;
   background: #ffffff;
 }
+.titleType{
+  font-weight: bold;
+}
 @media (max-width: 1199px) {
   .header ul.carousel-indicators {
     bottom: 200px;
