@@ -147,6 +147,13 @@ nav.fixed-top {
 .titleType{
   font-weight: bold;
 }
+.owl-carousel .owl-item img {
+  width: fit-content;
+}
+.text-center {
+  text-align: center!important;
+  align-items: center;
+}
 @media (max-width: 1199px) {
   .header ul.carousel-indicators {
     bottom: 200px;
@@ -268,7 +275,7 @@ nav.fixed-top {
 }
 
 .menu-links {
-  width: 450px;
+  width: 460px;
 }
 .menu-links li {
   margin: 0px;

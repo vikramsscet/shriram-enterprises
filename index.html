@@ -62,7 +62,7 @@
                             <a class="nav-link" href="#about-us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Our clients</a>
+                            <a class="nav-link" href="#portfolio">Our Projects</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
@@ -109,12 +109,6 @@
                     <!-- <p>Creating a timeless look, coupled with a flawless moment</p> -->
                 </div>
             </div>
-            <!-- <div class="scroll-button">
-                <p>Scroll down to see more...</p>
-                <a href="#about-us" class="page-scroll">
-                    <img src="images/arrows-down.png" alt="arrow down" />
-                </a>
-            </div> -->
         </div>
         <ul class="carousel-indicators">
             <li class="active" data-target="#fh5co-hero-carousel" data-slide-to="0" aria-current="location"></li>
@@ -183,113 +177,19 @@
         </div>
     </div>
 
-
-    <div class="container-fluid fh5co-portfolio" id="portfolio">
-        <div class="container">
-            <h2>Our Clients</h2>
-            <div class="portfolio-tab portfolioFilter">
-                <ul>
-                    <li><a href="#" data-filter="*" class="active">ALL</a>
-                    </li>
-                    <li><a href="#" data-filter=".landscape">landscape</a>
-                    </li>
-                    <li><a href="#" data-filter=".green">Green</a>
-                    </li>
-                    <li><a href="#" data-filter=".building">Building</a>
-                    </li>
-                    <li><a href="#" data-filter=".wedding">Weeding</a>
-                    </li>
-                    <li><a href="#" data-filter=".nature">Nature</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="row">
-                <div class="portfolioContainer">
-                    <div class="gallary building nature green">
-                        <img src="images/gallery/1.jpeg" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="gallary center-img wedding">
-                        <img src="images/gallery/2.jpeg" class="half-height" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallary center-img landscape building">
-                        <img src="images/gallery/3.jpeg" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallary center-img landscape nature">
-                        <img src="images/gallery/4.jpeg" class="half-height" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallary center-img landscape">
-                        <img src="images/gallery/5.jpeg" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallary green">
-                        <img src="images/gallery/6.jpeg" alt="">
-                        <div class="card-img-overlay">
-                            <div class="top-buttons bottom-buttons clearfix">
-                                <a href="#"><span class="img-icon"><img src="images/eye.png" alt="share icon" /></span>
-                                    <span class="txt">Full View</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ------------------------------------------------------------------------------------- -->
-
     <div class="container-fluid fh5co-portfolio" id="portfolio">
         <div class="container">
             <h2>Our Projects</h2>
             <div class="portfolio-tab portfolioFilter">
-                <ul>
-                    <li><a href="#" data-filter="*" class="active">ALL</a></li>
-                    <li><a href="#" data-filter=".erection">Civil</a></li>
-                    <li><a href="#" data-filter=".epc">EPC</a></li>
-                    <li><a href="#" data-filter=".electrical">Electrical</a></li>
-                    <li><a href="#" data-filter=".mechanical">Mechanical</a></li>
+                <ul id="projectFilters">
+                    <li><a href="#" onclick="formatProjects(event)" id="epc" data-filter=".epc">EPC</a></li>
+                    <li><a href="#" onclick="formatProjects(event)" id="electrical" data-filter=".electrical">Electrical</a></li>
+                    <li><a href="#" onclick="formatProjects(event)" id="mechanical" data-filter=".mechanical">Mechanical</a></li>
                 </ul>
             </div>
 
             <div class="row">
-                <div class="portfolioContainer">
+                <div id="projectContainer" class="portfolioContainer">
                     <div class="gallary electrical">
                         <div class="jumbotron">
                             <h4>BHEL-ISG</h4>
@@ -430,7 +330,7 @@
                         </div>
                     </div>
 
-                    <div class="gallary civil">
+                    <div class="gallary epc">
                         <div class="jumbotron">
                             <h4>NMDC-NISP</h4>
                             <p><span class="titleType">Site : </span>NMDC Nagarnar</p>
@@ -439,7 +339,7 @@
                         </div>
                     </div>
 
-                    <div class="gallary civil">
+                    <div class="gallary epc">
                         <div class="jumbotron">
                             <h4>NMDC-NISP</h4>
                             <p><span class="titleType">Site : </span>NMDC Nagarnar</p>
@@ -585,13 +485,14 @@
 
                 </div>
             </div>
-
+            <div class="scroll-button">
+                <a onclick="showMoreLess(event)" class="page-scroll">
+                    <img src="images/arrows-down.png" alt="arrow down">
+                </a>
+            </div>
         </div>
 
     </div>
-
-
-    <!-- ------------------------------------------------------------------------------------- -->
 
 
     <div class="container-fluid fh5co-news" id="news">
@@ -600,41 +501,23 @@
             <div class="row">
                 <div class="owl-carousel owl-carousel2 owl-theme">
                     <div>
-                        <div class="card text-center"> <img class="card-img-top" src="images/news1.png" alt="">
-                            <div class="card-body text-left pr-0 pl-0">
-                                <h5>How to take a Awosome photo Of
-                                    Groups! </h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-                            </div>
-                        </div>
+                        <div class="card text-center"> <img width= "400" height="500" class="card-img-top" src="images/gallery/1.jpeg" alt=""></div>
                     </div>
-
                     <div>
-                        <div class="card text-center"> <img class="card-img-top" src="images/news2.png" alt="">
-                            <div class="card-body text-left pr-0 pl-0">
-                                <h5>How to take a Awosome photo Of
-                                    Groups! </h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </div>
+                        <div class="card text-center"> <img height="500" class="card-img-top" src="images/gallery/2.jpeg" alt=""></div>
                     </div>
-
                     <div>
-                        <div class="card text-center"> <img class="card-img-top" src="images/news3.png" alt="">
-                            <div class="card-body text-left pr-0 pl-0">
-                                <h5>How to take a Awosome photo Of
-                                    Groups! </h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-                            </div>
-                        </div>
+                        <div class="card text-center"> <img height="500" class="card-img-top" src="images/gallery/3.jpeg" alt=""></div>
                     </div>
-
+                    <div>
+                        <div class="card text-center"> <img height="500" class="card-img-top" src="images/gallery/4.jpeg" alt=""></div>
+                    </div>
+                    <div>
+                        <div class="card text-center"> <img height="500" class="card-img-top" src="images/gallery/5.jpeg" alt=""></div>
+                    </div>
+                    <div>
+                        <div class="card text-center"> <img height="500" class="card-img-top" src="images/gallery/6.jpeg" alt=""></div>
+                    </div>
                 </div>
             </div>
         </div>

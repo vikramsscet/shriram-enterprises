@@ -34,6 +34,7 @@
               center: true,
               margin:30,
               responsiveClass:true,
+              autoHeight: false,
               nav:true,
               responsive:{
                   0:{
@@ -41,13 +42,13 @@
                       nav:true
                   },
                   600:{
-                      items:2,
+                      items:1,
                       nav:true,
                       margin:10,
                       center: false,
                   },
                   1000:{
-                      items:3,
+                      items:1,
                       nav:true,
                       loop:true
                   }
@@ -100,6 +101,60 @@
         isotope();
         navbar();
     })(jQuery);
-
+    (function (){
+        document.getElementById("epc").click();
+    })();
 
 }());
+let projectDetails = {
+    epc: {
+        height: 0
+    },
+    electrical: {
+        height: 0
+    },
+    mechanical: {
+        height: 0
+    }
+}
+function formatProjects(e){
+    let projectId = e.target.id;
+    setTimeout(() => {
+        var containerHeight = document.getElementById("projectContainer").offsetHeight;
+        if(projectDetails[projectId].height === 0){
+            projectDetails[projectId].height = containerHeight;
+        }
+        if (containerHeight < 400) {
+            document.getElementsByClassName('scroll-button')[0].style.display = 'none';
+        } else {
+            document.getElementsByClassName('scroll-button')[0].style.display = 'block';
+            showMoreLess(e.target && e.target.id);
+        }
+    },300)
+    
+}
+function showMoreLess(className){
+    let arrowDirection = 'images/arrows-down.png';
+    if(typeof(className) === "object"){
+        className = document.getElementById('projectFilters').querySelector(".active").id;
+        let els = document.getElementsByClassName(className);
+        for (var i = 4; i < els.length; i++) {
+            if(els[i].style.display === 'none'){
+                arrowDirection = 'images/arrows-up.png';
+                els[i].style.display = 'block'
+            }else{
+                arrowDirection = 'images/arrows-down.png';
+                els[i].style.display = 'none';
+            }
+        }
+        document.getElementById('projectContainer').style.height = arrowDirection === 'images/arrows-up.png' ? `${projectDetails[className].height}px` : '380px';
+        document.getElementsByClassName('page-scroll')[0].firstElementChild.src = arrowDirection;
+    }else{
+        document.getElementsByClassName('page-scroll')[0].firstElementChild.src = arrowDirection;
+        document.getElementById('projectContainer').style.height='380px';
+        let els = document.getElementsByClassName(className);
+        for (var i = 4; i < els.length; i++) {
+            els[i].style.display='none';
+        }
+    }
+}
