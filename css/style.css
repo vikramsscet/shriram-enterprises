@@ -148,7 +148,7 @@ nav.fixed-top {
   font-weight: bold;
 }
 .owl-carousel .owl-item img {
-  width: fit-content;
+  width: inherit;
 }
 .text-center {
   text-align: center!important;
@@ -250,7 +250,7 @@ nav.fixed-top {
 }
 
 .social-links {
-  width: 430px;
+  width: 330px;
 }
 .social-links li {
   border: 1px solid #ffffff;
@@ -275,7 +275,7 @@ nav.fixed-top {
 }
 
 .menu-links {
-  width: 460px;
+  width: 600px;
 }
 .menu-links li {
   margin: 0px;
@@ -355,7 +355,8 @@ p {
 }
 
 .fh5co-about-us {
-  padding: 150px 0;
+  /* padding: 150px 0; */
+  padding: 150px 0px 50px 0px;
 }
 .fh5co-about-us h2 {
   margin-left: 20px;
@@ -480,6 +481,7 @@ a {
 
 .fh5co-portfolio {
   padding-bottom: 0;
+  padding-top: 50px;
 }
 .fh5co-portfolio h3 {
   font-family: "Larsseit-Medium";

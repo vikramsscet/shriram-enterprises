@@ -147,6 +147,9 @@ function showMoreLess(className){
                 els[i].style.display = 'none';
             }
         }
+        if(arrowDirection === 'images/arrows-down.png'){
+            document.getElementById('nav-project').click();
+        }
         document.getElementById('projectContainer').style.height = arrowDirection === 'images/arrows-up.png' ? `${projectDetails[className].height}px` : '380px';
         document.getElementsByClassName('page-scroll')[0].firstElementChild.src = arrowDirection;
     }else{
