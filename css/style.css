@@ -150,9 +150,30 @@ nav.fixed-top {
 .owl-carousel .owl-item img {
   width: inherit;
 }
+.menu-links li a:hover {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.22), transparent);
+  border-top: 5px solid #1270e4;
+}
 .text-center {
   text-align: center!important;
   align-items: center;
+}
+.clients{
+  padding: 0px;
+  margin: 0px;
+  border: 5px solid white;
+}
+.clients img{
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+}
+.fh5co-clients h2{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.owl-theme img {
+  height: 100vh;
 }
 @media (max-width: 1199px) {
   .header ul.carousel-indicators {
@@ -302,8 +323,10 @@ nav.fixed-top {
 }
 
 .navbar-collapse.show {
-  background: rgba(0, 0, 0, 0.4);
+  background: black;
   transition: .2s;
+  width: 100%;
+  height: 100%;
 }
 
 .mobile-logo {
@@ -938,4 +961,12 @@ footer.fh5co-footer .social-links li a {
   left: 0;
   right: 0;
   min-height: 1027px;
+}
+@media (max-width: 600px) {
+  .menu-links {
+    width: 100%;
+  }
+  .menu-links li a{
+    color: white;
+  } 
 }

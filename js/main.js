@@ -103,6 +103,7 @@
     })(jQuery);
     (function (){
         document.getElementById("epc").click();
+        document.getElementById("cement").click();
     })();
 
 }());
