@@ -968,5 +968,12 @@ footer.fh5co-footer .social-links li a {
   }
   .menu-links li a{
     color: white;
-  } 
+  }
+  .mobileSec{
+    height: 100vh;
+  }
+  .carousel-item img{
+    height: 100vh;
+  }
+
 }
