@@ -433,12 +433,17 @@ p {
     margin-top: -70px;
   }
 }
+
 @media (max-width: 450px) {
   .fh5co-about-us .owl-carousel1 {
     display: none;
   }
   .container-fluid{
     padding: 50px 0px;
+  }
+  .clients img{
+    height: 120px;
+    width: 120px;
   }
 }
 
@@ -549,7 +554,7 @@ a {
   width: 100%;
 }
 
-.portfolioContainer {
+.clientContainer, .projectContainer {
   border-radius: 3px;
   width: 100%;
 }

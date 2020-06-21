@@ -57,8 +57,64 @@
           );
     }
 
+    var isotope1 = function () {
+        var $container = $('.projectContainer');
+        $container.isotope({
+            filter: '*',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
 
-    var isotope = function () {
+        $('.projectFilter a').click(function () {
+            $('.projectFilter .active').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        });
+    };
+
+    var isotope2 = function () {
+        var $container = $('.clientContainer');
+        $container.isotope({
+            filter: '*',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        $('.clientFilter a').click(function () {
+            $('.clientFilter .active').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('client-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        });
+    };
+
+
+    /* var isotope = function () {
         var $container = $('.portfolioContainer');
         $container.isotope({
             filter: '*',
@@ -99,7 +155,7 @@
             });
             return false;
         });
-    };
+    }; */
 
     var navbar = function () {
         $(window).scroll(function () {
@@ -113,7 +169,8 @@
 
     (function ($) {
         carousels();
-        isotope();
+        isotope1();
+        isotope2();
         navbar();
     })(jQuery);
     (function (){
