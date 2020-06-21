@@ -975,5 +975,9 @@ footer.fh5co-footer .social-links li a {
   .carousel-item img{
     height: 100vh;
   }
+  .owl-carousel .owl-item img{
+    width: 100vw;
+    height: auto;
+  }
 
 }
