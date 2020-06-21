@@ -69,8 +69,8 @@
             }
         });
 
-        $('.portfolioFilter a').click(function () {
-            $('.portfolioFilter .active').removeClass('active');
+        $('.projectFilter a').click(function () {
+            $('.projectFilter .active').removeClass('active');
             $(this).addClass('active');
 
             var selector = $(this).attr('data-filter');
@@ -83,7 +83,22 @@
                 }
             });
             return false;
-        }); 
+        });
+        $('.clientFilter a').click(function () {
+            $('.clientFilter .active').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('client-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        });
     };
 
     var navbar = function () {
@@ -102,8 +117,8 @@
         navbar();
     })(jQuery);
     (function (){
-        document.getElementById("cement").click();
         document.getElementById("epc").click();
+        document.getElementById("cement").click();
     })();
 
 }());
@@ -118,14 +133,41 @@ let projectDetails = {
         height: 0
     }
 }
+let isMobile = window.innerWidth < 500 ? true : false;
+function getHeight(type, className){
+    let height = 0;
+    let containerHeight = 0;
+    let visibleCards = [];
+    let projectObjArr = document.getElementsByClassName(className);
+    for (var i = 0; i < projectObjArr.length; i++) {
+        if (projectObjArr[i].style.display != "none") {
+            height = projectObjArr[i].offsetHeight;
+            containerHeight = containerHeight + height;
+            visibleCards.push(projectObjArr[i]);
+        }
+    }
+    if(!isMobile){
+        let cardsPerRow = parseInt(window.innerWidth/visibleCards[0].offsetWidth);
+        let totalRows = parseInt(visibleCards.length/cardsPerRow)+(visibleCards.length%cardsPerRow === 0 ? 0 : 1);
+        containerHeight = visibleCards[0].offsetHeight*totalRows;
+    }
+    if(type === 'images/arrows-down.png'){
+        if(isMobile){
+            height = visibleCards[0].offsetHeight + visibleCards[1].offsetHeight + visibleCards[2].offsetHeight;
+        }
+        
+    }else{
+        height = containerHeight
+    }
+    return height;
+}
 function formatProjects(e){
     let projectId = e.target.id;
     setTimeout(() => {
-        var containerHeight = document.getElementById("projectContainer").offsetHeight;
         if(projectDetails[projectId].height === 0){
-            projectDetails[projectId].height = containerHeight;
+            projectDetails[projectId].height = getHeight('images/arrows-down.png', projectId);
         }
-        if (containerHeight < 400) {
+        if (document.getElementById("projectContainer").offsetHeight < 400) {
             document.getElementsByClassName('scroll-button')[0].style.display = 'none';
         } else {
             document.getElementsByClassName('scroll-button')[0].style.display = 'block';
@@ -139,7 +181,7 @@ function showMoreLess(className){
     if(typeof(className) === "object"){
         className = document.getElementById('projectFilters').querySelector(".active").id;
         let els = document.getElementsByClassName(className);
-        for (var i = 4; i < els.length; i++) {
+        for (var i = isMobile ? 3 : 4; i < els.length; i++) {
             if(els[i].style.display === 'none'){
                 arrowDirection = 'images/arrows-up.png';
                 els[i].style.display = 'block'
@@ -151,13 +193,13 @@ function showMoreLess(className){
         if(arrowDirection === 'images/arrows-down.png'){
             document.getElementById('nav-project').click();
         }
-        document.getElementById('projectContainer').style.height = arrowDirection === 'images/arrows-up.png' ? `${projectDetails[className].height}px` : '380px';
+        document.getElementById('projectContainer').style.height = `${getHeight(arrowDirection, className)}px`;
         document.getElementsByClassName('page-scroll')[0].firstElementChild.src = arrowDirection;
     }else{
         document.getElementsByClassName('page-scroll')[0].firstElementChild.src = arrowDirection;
-        document.getElementById('projectContainer').style.height='380px';
+        document.getElementById('projectContainer').style.height=`${getHeight(arrowDirection, className)}px`/* '380px' */;
         let els = document.getElementsByClassName(className);
-        for (var i = 4; i < els.length; i++) {
+        for (var i = isMobile ? 3 : 4; i < els.length; i++) {
             els[i].style.display='none';
         }
     }
