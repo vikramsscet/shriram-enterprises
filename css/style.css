@@ -147,7 +147,7 @@ nav.fixed-top {
 .titleType{
   font-weight: bold;
 }
-.owl-carousel .owl-item img {
+#awards .owl-carousel .owl-item img {
   width: inherit;
 }
 .menu-links li a:hover {
@@ -372,7 +372,7 @@ h2::after {
 
 p {
   font-family: "Larsseit";
-  color: #aeafb9;
+  color: #2F4F4F;
   font-size: 14.583px;
   line-height: 1.143;
 }
@@ -858,6 +858,7 @@ footer.fh5co-footer p span {
 footer.fh5co-footer p span.phone {
   top: -2px;
   position: relative;
+  float: left;
 }
 footer.fh5co-footer p b {
   color: #1e1f29;
@@ -884,7 +885,7 @@ footer.fh5co-footer .social-links li a {
 }
 @media (max-width: 991px) {
   footer.fh5co-footer .col-lg-5 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px;
   }
   footer.fh5co-footer .social-links {
@@ -905,7 +906,6 @@ footer.fh5co-footer .social-links li a {
   font-family: "Larsseit-Bold";
   font-size: 33px;
   color: #1e1f29;
-  text-transform: uppercase;
 }
 .form-box h4::after {
   position: absolute;
@@ -985,4 +985,7 @@ footer.fh5co-footer .social-links li a {
     height: auto;
   }
 
+}
+.address-icon{
+  height: 18px;
 }
